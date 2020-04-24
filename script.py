@@ -29,15 +29,17 @@ def create_custom_hn(sites, points):
         if len(vote):
             score = int(vote[0].getText().replace(' points', ''))
             if score > 99:
-                hn.append({'title': title, 'link': href, 'score': score})
+                hn.append({'title': title, 'blink': href, 'score': score})
                 counter += 1
     print(counter)
     return sort_stories_by_votes(hn)
 
 
-xml = dicttoxml(create_custom_hn(all_links, all_subtext), custom_root='test', attr_type=False)
-output = BeautifulSoup(xml, 'html.parser')
-html = output.prettify("utf-8")
-with open("hntop.html", "wb") as file:
-    file.truncate(0)
-    file.write(html)
+def get_stuff():
+    xml = dicttoxml(create_custom_hn(all_links, all_subtext), custom_root='container', attr_type=False)
+    output = BeautifulSoup(xml, 'html.parser')
+    html = output.prettify("utf-8")
+    with open("hntop.html", "wb") as file:
+        file.truncate(0)
+        file.write(html)
+    return output
