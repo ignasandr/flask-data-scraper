@@ -1,0 +1,85 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-break: break-all;
+}
+
+h1 {
+  color: #245072;
+}
+
+.container {
+  display:grid;
+  width: 100%;
+  padding: 20px;
+  gap: 15px 40px;
+  grid-template-columns: 1fr;
+  /* grid-template-areas:
+    "form"
+    "."; */
+}
+
+    .container > .item {
+        display: inline-block;
+        padding: 20px 20px 10px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #0005;
+        position: relative;
+    }
+        .container > .item > .score {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 10px;
+            background-color: #FFBE66;
+        }
+        .container > .item > .title {
+            display: inline-block;
+            width: 100%;
+            font-size: 22px;
+            line-height: 26px;
+}
+        .container > .item > .title > a:link {
+            text-decoration: none;
+            color: #245072;
+        }
+        .container > .item > .title > a:visited {
+            text-decoration: none;
+            color: #B1542F;
+        }
+        .container > .item > .blink {
+            display: inline-block;
+            width: 100%;
+}
+
+@media ( min-width: 500px ) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "newTodo newTodo"
+            ". .";
+    }
+}
+@media ( min-width: 900px ) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "newTodo newTodo newTodo"
+            ". . .";
+    }
+}
+@media ( min-width: 1300px ) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "newTodo newTodo newTodo newTodo"
+            ". . . .";
+    }
+}
