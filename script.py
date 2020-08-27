@@ -43,3 +43,4 @@ def get_stuff():
         file.truncate(0)
         file.write(html)
     return output
+
